@@ -1,0 +1,43 @@
+
+
+
+
+
+Implementation of return method:
+
+Example:
+
+Let's say validateCheckput.getReturnDate() returns the string "2023-06-01" and the current date is "2023-05-30".
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");: Creates a SimpleDateFormat object with the pattern "yyyy-MM-dd".
+
+Date d1 = sdf.parse(validateCheckput.getReturnDate());: Parses the string "2023-06-01" into a Date object d1 representing June 1, 2023.
+
+Date d2 = sdf.parse(LocalDate.now().toString());: Retrieves the current date as "2023-05-30" and parses it into a Date object d2 representing May 30, 2023.
+
+TimeUnit time = TimeUnit.DAYS;: Creates a TimeUnit object representing the time unit as days.
+
+double difference = time.convert(d1.getTime() - d2.getTime(), TimeUnit.MILLISECONDS);: Calculates the time difference between d1 (June 1, 2023) and d2 (May 30, 2023) in milliseconds. The difference is 172,800,000 milliseconds. 
+
+Then, it converts the milliseconds to days using time.convert() and stores the result in the variable difference. 
+
+In this example, difference would be 2.0, indicating a 2-day difference between the two dates.
+
+
+
+if(differnce <0) {
+creating the object of payment and finding the user by user Email and then, 
+we are setting the payment to the amount the user has to pay after including the extend date 
+and we are updating the payment of that particular user in payment table too!!
+
+else 
+
+increadsing the product  count  by present number of that book + 1 
+
+we are creating a new history object and updating the history table with user along with checkout date , Today's date and art product name 
+then saving the product in product repository 
+then deleting that id from checkout repository as he has returned the art product 
+
+
+then we are updating the history table by creating the new object and updating the history with that user , checkout date, product title , Artist name , description and image;
+then we are saving this filed in history table 
